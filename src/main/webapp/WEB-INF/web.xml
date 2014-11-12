@@ -1,91 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    version="2.5">
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>br.com.fcsilva.rest.recurso.Principal</display-name>
 
-  <!--
-  <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
-  -->
+	<servlet>
+		<servlet-name>principal</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>br.com.fcsilva.rest.recurso</param-value>
+		</init-param>
+	</servlet>
 
-  <servlet>
-      <servlet-name>api</servlet-name>
-      <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-      <init-param>
-          <param-name>com.sun.jersey.config.property.packages</param-name>
-          <param-value>com.example.api.services</param-value>
-      </init-param>
-      <init-param>
-          <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-          <param-value>true</param-value>
-      </init-param>
-  </servlet>
-
-  <servlet>
-      <servlet-name>ajax</servlet-name>
-      <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-      <init-param>
-          <param-name>com.sun.jersey.config.property.packages</param-name>
-          <param-value>com.example.ajax.services</param-value>
-      </init-param>
-      <init-param>
-          <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-          <param-value>true</param-value>
-      </init-param>
-  </servlet>
-  
-  <servlet>
-    <servlet-name>front</servlet-name>
-    <servlet-class>com.example.servlets.FrontServlet</servlet-class>
-  </servlet>
-    
-  <servlet>
-    <servlet-name>root</servlet-name>
-    <servlet-class>com.example.servlets.RootServlet</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>/images/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>/lib/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>/script/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>/style/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>api</servlet-name>
-    <url-pattern>/api/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>ajax</servlet-name>
-    <url-pattern>/ajax/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>front</servlet-name>
-    <url-pattern>/dp/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>root</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
-
+	<servlet-mapping>
+		<servlet-name>principal</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
 
 </web-app>
