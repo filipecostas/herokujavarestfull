@@ -24,6 +24,12 @@ public class TimeService {
     public Time get() {
         return new Time();
     }
+    
+    @GET
+    @Path("/retorna")
+    public String retorna() {
+    	return "Funciona no heroku";
+    }
 
 }
 
